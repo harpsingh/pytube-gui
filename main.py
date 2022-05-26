@@ -71,11 +71,11 @@ def download_in_progress(*args):
     gui.progress_bar['value'] = percent
     gui.button_download.config(state="disabled")
 
-
-gui = GUI()
-gui.entry_folder.insert(0, user_download_folder)
-gui.button_load.config(command=load_thread)
-gui.button_folder.config(command=browse_button)
-gui.stream_selected.trace("w", callback=enable_download_button)
-gui.button_download.config(command=download_thread)
-gui.mainloop()
+if __name__ == "__main__":
+    gui = GUI()
+    gui.entry_folder.insert(0, user_download_folder)
+    gui.button_load.config(command=load_thread)
+    gui.button_folder.config(command=browse_button)
+    gui.stream_selected.trace("w", callback=enable_download_button)
+    gui.button_download.config(command=download_thread)
+    gui.mainloop()
